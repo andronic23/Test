@@ -1,0 +1,49 @@
+$(document).ready(function(){
+	$("#generate").on('click',function(){
+		if(validate(true)){
+  		 	  	 var lengh_number = $("#number").val();
+
+			 	for (var i = 1; i<=lengh_number; i++){
+					$('#main').append("<div class=new_div id="+i+">"+i+"</div><br /> <br />")
+					}
+				return false;
+				}
+			});	
+
+
+			$("#inserted").on('click',function(){
+						/*if($("#insert_number").val() <= $("#number").val()){*/
+							
+						var put_number = $(("#insert_number")).val();
+						var put_text = $("#text").val();
+						$( "#main" ).find( "div:eq("+put_number+")" ).text(put_text);
+							return false;		
+							/*}*/		
+				});
+ $("#reset").click(function(){
+        $("#main .new_div").remove();
+    });
+			$("form[name='registration']").validate({
+   				rules: {
+	 		number: "required",
+	 		insert_number: "required",
+	 		text: "required",	 			
+			      number : {
+			       required: true,
+			       max: 10		       		        
+			      },
+				insert_number : {
+			       required: true
+			       	        
+			      }			      
+			      },
+			       messages : {		      
+
+      number: "Your number must be at least 10 number long !",
+      insert_number: "Your value number must be less than or equal to the number generated !!",
+	  text: "Please enter your text !!!",			        
+			      }
+			  
+
+			 	});
+});
