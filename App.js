@@ -1,14 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { Component } from 'react';
 
 class App  extends Component {
+  clickHandle = () => {
+    console.log('btn clicked');
+  }
   render() {
-    return <div className="App">
-              <h1>
-                First React JS APP
-              </h1>
-            </div>;
+    return <button onClick={this.clickHandle}>Click</button>;
   }
 }
 
