@@ -25,20 +25,6 @@
  //7. Rescrieti urmatorul cod (unde componenta Child este inclusa in componenta Parent de 3 ori) 
  //   utilizand doar SINGLE TAG pentru "Parent"!!! in JSX
 
-function Child(props) {
-  return <div>This is the {props.name} child!)</div>;
-}
-
-function Parent(props) {
-  return (
-    <div>
-      <Child name="One" />
-      <Child name="Two" />
-      <Child name="Three" />
-    </div>
-  );
-}
-
 function App() {
   return (
     <div>
@@ -46,6 +32,33 @@ function App() {
     </div>
   );
 }
+
+const numbers = {
+  first: 'One',
+  second: 'Two',
+  third: 'Three'
+};
+
+const { first, second, third } = numbers;
+
+function Child(numbers) {
+  return (
+    <div>
+      <div>This is the {first} child!)</div>
+      <div>This is the {second} child!)</div>
+      <div>This is the {third} child!)</div>
+    </div>
+  );
+}
+
+function Parent(props) {
+  return (
+    <div>
+      <Child props />
+    </div>
+  );
+}
+
 
 //  8. Aveti urmatorul cod, rescrieti codul astfel incat proprietatea transmisa "customContent" sa se numeasca "custom-content"
 function MyComponent(props) {
