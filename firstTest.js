@@ -25,38 +25,27 @@
  //7. Rescrieti urmatorul cod (unde componenta Child este inclusa in componenta Parent de 3 ori) 
  //   utilizand doar SINGLE TAG pentru "Parent"!!! in JSX
 
-function Parent(props) { 
-  return (<div>
-            <div> This is the {props.first} child!) </div>
-            <div> This is the {props.second} child!) </div>
-            <div> This is the {props.third} child!)  </div>
-          </div>)
+function Child(props) {
+  return <div>This is the {props.name} child!)</div>;
 }
 
-// variable with all values
-const comment = {
-  first:'One',
-  second: 'Two',
-  third: 'Three',
-};
+function Parent(props) {
+  return (
+    <div>
+      <Child name="One" />
+      <Child name="Two" />
+      <Child name="Three" />
+    </div>
+  );
+}
 
-// main component, rewrite the code here
 function App() {
   return (
     <div>
-      <Parent 
-        first={comment.first}
-        second={comment.second}
-        third={comment.third}
-       />      
+      <Parent />
     </div>
-  )
+  );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 
 //  8. Aveti urmatorul cod, rescrieti codul astfel incat proprietatea transmisa "customContent" sa se numeasca "custom-content"
 function MyComponent(props) {
