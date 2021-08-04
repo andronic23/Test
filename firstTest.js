@@ -59,19 +59,19 @@ ReactDOM.render(
 );
 
 //  8. Aveti urmatorul cod, rescrieti codul astfel incat proprietatea transmisa "customContent" sa se numeasca "custom-content"
-  function MyComponent(props) { 
-    return (<div>{props.customContent}</div>)
-  }
+function MyComponent(props) {
+  const custom = {
+    customContent: 'custom-content'
+  };
+  return <div>{props.custom}</div>;
+}
 
-  
-
-  // main component, rewrite the code here
-  function App() {
-    return (
-      <div>
-        <MyComponent customContent="This is some text for testing!"/>
-      </div>
-    )
-  }
-  
-  //proprietatatile se denumesc prin camelCase insa cu un simbol nu este posibila
+// main component, rewrite the code here
+function App() {
+  return (
+    <div>
+      <MyComponent custom="This is some text for testing!" />
+    </div>
+  );
+}  
+  //am inclus intr-o variabila denumirea cu cratima
