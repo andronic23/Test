@@ -61,18 +61,15 @@ function Parent(props) {
 
 
 //  8. Aveti urmatorul cod, rescrieti codul astfel incat proprietatea transmisa "customContent" sa se numeasca "custom-content"
-function MyComponent(props) {
-  const custom = {
-    customContent: 'custom-content'
-  };
-  return <div>{props.custom}</div>;
+const MyComponent = (props) => {
+return <div>{props['custom-content']}</div>
 }
 
 // main component, rewrite the code here
 function App() {
   return (
     <div>
-      <MyComponent custom="This is some text for testing!" />
+      <MyComponent {...{'custom-content':'This is some text for testing!'}}/>
     </div>
   );
 }  
